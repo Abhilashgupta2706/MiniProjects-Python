@@ -5,30 +5,32 @@ print('''Hi there, This is a Dice(s) rolling Simulator.
 You can roll 1/2 dice(s)''')
 
 
+# Choice of user to continue the game or not
 def choice():
     user_choice = input("Do you want to roll dice again? (y/n) ").lower()
     if user_choice == 'y':
         rollTheDice()
     elif user_choice == "n":
         print('Hope you had fun playing this small game, See you again 👋🏻')
-
+        return
     else:
         print('Wrong input try again!')
-        rollTheDice()
+        choice()
 
 
+# Logic
 def rollTheDice():
-    num_of_dices = int(input("\nHow many dies you want to roll? "))
+    num_of_dices = input("\nHow many dies you want to roll? ")
 
     while True:
-        if num_of_dices == 1:
+        if num_of_dices == '1':
             rollingPrint()
             dice = random.randint(1, 6)
             print(f'Rolled number is {dice}')
             choice()
             break
 
-        elif num_of_dices == 2:
+        elif num_of_dices == '2':
             rollingPrint()
             dice1 = random.randint(1, 6)
             dice2 = random.randint(1, 6)
@@ -37,24 +39,15 @@ def rollTheDice():
             break
 
         else:
-            print("Choose between 1 and 2 dice(s) Only!")
+            print("Invalid input! Choose between 1/2 dice(s) Only.")
             rollTheDice()
 
 
+# Just a print Statement
 def rollingPrint():
     print('Rolling....')
     time.sleep(1)
 
 
+# Calling the Function
 rollTheDice()
-
-# Python Projects
-
-Collection of my Small Projects that I made with Python
-
-I will update this repository as I will make new projects that will help me improve my coding skills as well as improve my problem solving.
-If you have any suggestions on how to improve my code or a new project that I can build or anything else, please fell free to contact me.😊
-
-# About Me
-
-Here is my [Portfolio Website](https://www.abhilashgupta.ml/) where you will know everthing about me with my Resume ❤️
